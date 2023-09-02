@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ViewController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // get route and display view
 Route::get('/deepak/{num}',function($num){
@@ -69,3 +70,10 @@ Route::get('/test',function(){
 
 // page view via controller
 Route::get('/index',[ViewController::class,'index']);
+
+Route::get('/',[StudentController::class,'index'])->name('student.index');
+Route::get('/student',[StudentController::class,'create'])->name('student.create');
+Route::post('/student/save',[StudentController::class,'store'])->name('student.store');
+Route::get('/student/{id}/edit',[StudentController::class,'edit'])->name('student.edit');
+Route::put('/student/{id}',[StudentController::class,'update'])->name('student.update');
+Route::delete('/student/{id}',[StudentController::class,'destroy'])->name('student.destroy');
