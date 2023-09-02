@@ -15,8 +15,8 @@
         <thead>
             <tr>
                 <th>Name</th>
-                <th></th>
-                <th></th>
+                <th>Edit Action</th>
+                <th>Delete Action</th>
             </tr>
         </thead>
        <tbody>
@@ -24,11 +24,12 @@
             <tr>
                 <td>{{$item->stud_name}}</td>
                 <td><a href="{{route('student.edit',$item->id)}}">Edit</a></td>
-                <form action="{{route('student.destroy',$item->id)}}" method="post">
+                <td><a href="{{route('student.destroy',$item->id)}}">Delete</a></td>
+                {{-- <form action="{{route('student.destroy',$item->id)}}" method="post">
                     @csrf
                     @method('DELETE')
                    <td><button>Delete</button></td>
-                </form>
+                </form> --}}
             </tr>
         @endforeach
        </tbody>
