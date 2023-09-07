@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UploadController;
 use App\Http\Controllers\ViewController;
 use Illuminate\Support\Facades\Route;
 
@@ -69,3 +70,6 @@ Route::get('/test',function(){
 
 // page view via controller
 Route::get('/index',[ViewController::class,'index']);
+
+Route::get('/upload',[UploadController::class,'upload']);
+Route::post('/upload_save',[UploadController::class,'upload_save'])->name('upload.save');
