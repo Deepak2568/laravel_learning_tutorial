@@ -13,7 +13,7 @@
     {{session()->get('message')}}
     @endif
     <a href="{{route('student.create')}}">create student</a>
-    <table border=1 style="border-collapse: collapse">
+    <table class="table table-bordered">
         <thead>
             <tr>
                 <th>Name</th>
