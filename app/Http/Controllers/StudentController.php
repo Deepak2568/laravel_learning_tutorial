@@ -13,8 +13,8 @@ class StudentController extends Controller
     {
         //
         $students = DB::select("SELECT * FROM students");
-
-        return view('index',compact('students'));
+        $datas = DB::table('students')->Paginate(2);
+        return view('index',compact('students','datas'));
     }
 
     /**
